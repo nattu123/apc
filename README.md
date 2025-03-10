@@ -1,2 +1,2 @@
 # apc
-arithmetic precision callculator
+arithmetic precision calculator
