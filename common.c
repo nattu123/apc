@@ -50,6 +50,7 @@ Status dl_insert_first(Dlist **head,Dlist **tail,int data)
 }
 
 
+
 Status dl_insert_last(Dlist **head, Dlist **tail , int data)
 {
     //allocate memory  

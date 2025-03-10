@@ -60,7 +60,8 @@ int main(int argc,char **argv)
     {
         case '+':
                 printf("add\n");
-            
+                add(&head1,&tail1,&head2,&tail2,&headR,&tailR);
+                print_list(headR);
                 break;
 
         default : 
