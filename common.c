@@ -1,6 +1,7 @@
 #include "apc.h" 
 #include <stdlib.h> 
 #include <stdio.h> 
+#include <string.h> 
 
 void print_list(Dlist *head)
 {
@@ -92,4 +93,51 @@ Status create_list(Dlist **head,Dlist **tail,char *operand)
 
     }
     return SUCCESS;
+}
+
+int greater_list(Dlist *head1,Dlist *head2,char *argv1,char *argv2)
+{
+    if(strlen(argv1) > strlen(argv2))   
+    {
+        printf("list1 greater\n");
+        return LIST1;
+    }
+    if(strlen(argv2) > strlen(argv1))
+    {
+        printf("list2 greater\n");
+        return LIST2;
+    }
+    if(strlen(argv1) == strlen(argv2))
+    {
+        printf("both lists  strlen are equal \n");
+        Dlist *temp1 = head1;
+        Dlist *temp2 = head2;
+        while(temp1 != NULL  & temp2!= NULL)
+        {
+            if(temp1->data > temp2->data)
+            {
+                printf("inside while list1 greater\n");
+                return LIST1;
+            }
+            if(temp2->data > temp1->data)
+            {
+                printf("inside while list2 greater\n");
+                return LIST2;
+            }
+            temp1 = temp1->next;
+            temp2 = temp2->next;
+        }
+        printf("both no.s are equal\n");
+        return EQUAL;
+    }
+}
+
+Status remove_leading_zeroes(Dlist **head,Dlist **tail)
+{
+    while((*head)->data == 0)
+    {
+        Dlist *temp = *head ;
+        *head = (*head)->next;
+        free(temp);
+    }
 }

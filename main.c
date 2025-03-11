@@ -56,14 +56,33 @@ int main(int argc,char **argv)
     print_list(head1);
     print_list(head2);
 
-    switch(argv[2][0])
+    switch(argv[2][0])  
     {
         case '+':
                 printf("add\n");
                 add(&head1,&tail1,&head2,&tail2,&headR,&tailR);
                 print_list(headR);
                 break;
-
+        case '-':
+                printf("sub\n");
+                int greater = greater_list(head1,head2,argv[1],argv[3]);
+                if(greater == EQUAL)
+                {
+                    dl_insert_first(&headR,&tailR,0);
+                }
+                if(greater == LIST1)
+                {
+                    substract(&head1,&tail1,&head2,&tail2,&headR,&tailR);
+                    remove_leading_zeroes(&headR,&tailR);
+                }
+                if(greater == LIST2)
+                {
+                    substract(&head2,&tail2,&head1,&tail1,&headR,&tailR);
+                    remove_leading_zeroes(&headR,&tailR);
+                    headR->data *= -1;
+                }
+                print_list(headR);
+                break;
         default : 
             break;
     }
