@@ -141,3 +141,27 @@ Status remove_leading_zeroes(Dlist **head,Dlist **tail)
         free(temp);
     }
 }
+
+
+int delete_list(Dlist**head,Dlist**tail)
+{
+    if(*head==NULL)
+    return FAILURE;
+    if(*head==*tail)
+    {
+        free(*head);
+        *head=*tail=NULL;
+        return SUCCESS;
+    }
+    else
+    {
+    while(*head!=NULL)
+    {
+    Dlist *temp=*head;
+    *head=(*head)->next;
+    free(temp);
+    }
+    *tail=NULL;
+    return SUCCESS;
+    }
+}

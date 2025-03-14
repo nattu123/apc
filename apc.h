@@ -1,7 +1,9 @@
 #ifndef APC_H
 #define APC_H
 
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define LIST1 1
 #define LIST2 2
@@ -28,5 +30,7 @@ Status add(Dlist **head1,Dlist **tail1,Dlist **head2,Dlist **tail2,Dlist **headR
 Status substract(Dlist **head1,Dlist **tail1,Dlist **head2,Dlist **tail2,Dlist **headR,Dlist **tailR);
 int greater_list(Dlist *head1,Dlist *head2,char *argv1,char *argv2);
 Status remove_leading_zeroes(Dlist **head,Dlist **tail);
+int delete_list(Dlist**head,Dlist**tail);
+Status multiply(Dlist **head1,Dlist **tail1,Dlist **head2,Dlist **tail2,Dlist **headR,Dlist **tailR);
 
 #endif

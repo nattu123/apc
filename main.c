@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
 #include<ctype.h>
 #include "apc.h"
 
@@ -83,8 +80,14 @@ int main(int argc,char **argv)
                 }
                 print_list(headR);
                 break;
-        default : 
-            break;
+                case 'x':
+                printf("mul\n");
+                multiply(&head2,&tail2,&head1,&tail1,&headR,&tailR);
+                print_list(headR);
+                break;
+                
+            default : 
+                break;
     }
 
 }   
